@@ -14,7 +14,7 @@ app.use(express.json());
 
 // routes
 
-app.use('/api/v1/payments', payments);
+app.use('/payments', payments);
 
 app.use(notFound);
 app.use(errorHandlerMiddleware);
