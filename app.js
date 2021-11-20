@@ -1,13 +1,14 @@
 const express = require('express');
 const app = express();
 const cors = require('cors')
-const payments = require('./routes/payments');
-const connectDB = require('./db/connect');
+const payments = require('./src/routes/payments');
+const connectDB = require('./src/db/connect');
 require('dotenv').config();
-const notFound = require('./middleware/not-found');
-const errorHandlerMiddleware = require('./middleware/error-handler');
+const notFound = require('./src/middleware/not-found');
+const errorHandlerMiddleware = require('./src/middleware/error-handler');
 
 // middleware
+app.use(express.static('./public'));
 app.use(cors())
 app.use(express.json());
 
